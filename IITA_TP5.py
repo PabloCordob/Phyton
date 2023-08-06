@@ -22,3 +22,23 @@ numero1=float(input("Ingrese el primer numero:"))
 numero2=float(input("Ingrese el segundo numero:"))
 suma=numero1+numero2
 redondear(suma)
+
+#3. Usando el módulo datetime, escribe un programa que muestre la fecha
+#y hora actuales del sistema
+from datetime import datetime
+dt = datetime.now()
+print(dt)
+
+#4. Escriba un programa que devuelva un número par al azar entre 2 y 10
+#(pista: para comprobar si se pueden generar todos los números, pruebe
+#ejecutar el programa dentro de un ciclo infinito).
+from pruebas import es_primo
+import random
+while True:
+    numero=int(random.randrange(2,11))
+    es_primo(numero)
+
+
+
+
+
