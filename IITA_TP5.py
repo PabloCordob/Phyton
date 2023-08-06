@@ -17,7 +17,7 @@ redondear(numero=float(input("Ingrese un numero decimal:")))
 #módulo que esté fuera de ese paquete, cree una función de suma de
 #decimales que redondee el resultado haciendo uso de la función
 #redondear() del paquete recién creado.
-from prueba import redondear
+from pruebas import redondear
 numero1=float(input("Ingrese el primer numero:"))
 numero2=float(input("Ingrese el segundo numero:"))
 suma=numero1+numero2

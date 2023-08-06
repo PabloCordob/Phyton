@@ -6,5 +6,3 @@ def redondear(numero):
         print(resto+1)
     elif numero3 <= 0.5:
         print(resto)
-
-redondear(numero=float(input("Ingrese un numero decimal:")))
