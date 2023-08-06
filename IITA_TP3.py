@@ -101,3 +101,4 @@ for rango in range(contador):
     contador=contador-1
     print(menor)
     lista.remove(menor)
+
