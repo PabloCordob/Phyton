@@ -4,6 +4,7 @@ pygame.init()
 #colores
 black = (0,0,0)
 blanco = (255, 255, 255)
+rojo =(255, 0 , 0)
 
 screen_size = (800, 600)
 
@@ -19,11 +20,12 @@ player2=pygame.image.load("jugador2.png").convert()
 
 sonido_de_golpe=pygame.mixer.Sound("beep.ogg")
 
+#pantalla de inicio
 pantalla_inicio = True
 fuente_grande = pygame.font.Font(None, 72)
-texto_inicio = fuente_grande.render("Pong Game", True, blanco)
+texto_inicio = fuente_grande.render("  ¡Pong Game!", True, rojo)
 fuente = pygame.font.Font(None, 36)
-texto_instrucciones = fuente.render("Presiona ESPACIO para empezar", True, blanco)
+texto_instrucciones = fuente.render(" Presiona ESPACIO para empezar", True, blanco)
 
 #puntuacion de los jugadores
 puntuacion_jugador1 = 0
@@ -48,6 +50,20 @@ pelota_x = 400
 pelota_y = 300
 
 game_over = False
+
+
+while pantalla_inicio:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pantalla_inicio = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            pantalla_inicio = False
+
+    screen.fill(black)
+    screen.blit(texto_inicio, (200, 200))
+    screen.blit(texto_instrucciones, (180, 300))
+    pygame.display.flip()
+    clock.tick(60)
 
 while not game_over:
     for event in pygame.event.get():
@@ -133,7 +149,7 @@ while not game_over:
         sonido_de_golpe.play()
     
     #puntaje
-    puntuacion_texto = fuente.render(f"           {puntuacion_jugador1}  Puntos  {puntuacion_jugador2}", True, blanco)
+    puntuacion_texto = fuente.render(f"          {puntuacion_jugador1}  Puntos  {puntuacion_jugador2}", True, blanco)
     screen.blit(puntuacion_texto, (250, 10))
     
     #imagen de jugadores
